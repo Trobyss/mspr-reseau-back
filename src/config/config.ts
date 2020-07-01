@@ -70,7 +70,7 @@ export const CONFIG: Config = {
   },
   ENV: process.env.ENV!,
   FRONT_URL: process.env.FRONT_URL!,
-  API_PORT: process.env.API_PORT!,
+  API_PORT: process.env.PORT || process.env.API_PORT!,
   API_HOST: process.env.API_HOST!,
   SECRETJWT: process.env.SECRETJWT!,
   error: {

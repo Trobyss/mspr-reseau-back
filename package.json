@@ -7,14 +7,15 @@
     "name": "Trobyss"
   },
   "description": "A MSPR Express node server with Typescript for scanning QrCode ",
-  "main": "build/server.js",
+  "main": "build/app.js",
   "scripts": {
-    "start": "yarn build && yarn prod",
+    "start": "node build/app.js",
     "start:ppr": "nodemon --config ./ppr.nodemon.json",
     "build": "ENV=prod tsc --build tsconfig.json",
-    "prod": "node -r ./tsconfig-paths-bootstrap.js build/server.js"
+    "postbuild": "ef-tspm"
   },
   "devDependencies": {
+    "@ef-carbon/tspm": "^2.2.5",
     "@types/bluebird": "^3.5.29",
     "@types/cls-hooked": "^4.3.0",
     "@types/cors": "^2.8.6",
@@ -35,6 +36,7 @@
     "@types/validator": "^12.0.1",
     "nodemon": "^1.19.3",
     "ts-node": "^8.4.1",
+    "tsc": "^1.20150623.0",
     "tsconfig-paths": "^3.9.0",
     "tslint": "^5.20.0",
     "tslint-config-prettier": "^1.18.0",
@@ -72,6 +74,7 @@
     "sequelize": "^5.21.3",
     "slugify": "^1.4.0",
     "sqlite3": "^4.1.1",
+    "tslib": "^2.0.0",
     "uuid": "^3.3.3",
     "validator": "^11.1.0",
     "wildleek": "^2.0.0"
