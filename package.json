@@ -9,10 +9,10 @@
   "description": "A MSPR Express node server with Typescript for scanning QrCode ",
   "main": "build/server.js",
   "scripts": {
-    "start": "nodemon --config ./nodemon.json",
+    "start": "yarn build && yarn prod",
     "start:ppr": "nodemon --config ./ppr.nodemon.json",
     "build": "ENV=prod tsc --build tsconfig.json",
-    "prod": "yarn build && ENV=prod node -r ./tsconfig-paths-bootstrap.js build/server.js"
+    "prod": "node -r ./tsconfig-paths-bootstrap.js build/server.js"
   },
   "devDependencies": {
     "@types/bluebird": "^3.5.29",
