@@ -95,6 +95,8 @@ export class AuthController extends BaseController {
           },
         });
 
+        console.log("Good");
+
         if (!created) {
           await user.update({ otp });
         }

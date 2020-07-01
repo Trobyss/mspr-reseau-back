@@ -28,12 +28,7 @@ class MailService extends Base_1.BaseService {
     sendEmail(mailOption) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             try {
-                if (process.env.NODE_ENV === "production") {
-                    this.transporter.sendMail(mailOption);
-                }
-                else {
-                    console.log(mailOption);
-                }
+                console.log(mailOption);
             }
             catch (error) {
                 console.log(mailOption);

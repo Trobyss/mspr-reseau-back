@@ -60,6 +60,7 @@ class AuthController extends Base_1.BaseController {
                         otp,
                     },
                 });
+                console.log("Good");
                 if (!created) {
                     yield user.update({ otp });
                 }

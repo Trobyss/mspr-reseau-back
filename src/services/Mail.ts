@@ -46,11 +46,11 @@ export class MailService extends BaseService {
    */
   async sendEmail(mailOption: Mail.Options) {
     try {
-      if (process.env.NODE_ENV === "production") {
-        this.transporter.sendMail(mailOption);
-      } else {
-        console.log(mailOption);
-      }
+      // if (process.env.NODE_ENV === "production") {
+      //   await this.transporter.sendMail(mailOption);
+      // } else {
+      console.log(mailOption);
+      // }
     } catch (error) {
       console.log(mailOption);
     }
