@@ -13,11 +13,11 @@ export class MailService extends BaseService {
     this.transporter = nodemailer.createTransport({
       auth: {
         pass: this.config.mail.password,
-        user: this.config.mail.user
+        user: this.config.mail.user,
       },
       host: this.config.mail.host,
       port: this.config.mail.port,
-      secure: true
+      secure: true,
     });
   }
 
@@ -35,7 +35,7 @@ export class MailService extends BaseService {
       html,
       subject,
       text,
-      to
+      to,
     };
   }
 
@@ -45,9 +45,13 @@ export class MailService extends BaseService {
    * @returns {Promise<void>}
    */
   async sendEmail(mailOption: Mail.Options) {
-    if (process.env.NODE_ENV === "production") {
-      this.transporter.sendMail(mailOption);
-    } else {
+    try {
+      if (process.env.NODE_ENV === "production") {
+        this.transporter.sendMail(mailOption);
+      } else {
+        console.log(mailOption);
+      }
+    } catch (error) {
       console.log(mailOption);
     }
   }

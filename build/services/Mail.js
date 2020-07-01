@@ -9,11 +9,11 @@ class MailService extends Base_1.BaseService {
         this.transporter = nodemailer_1.default.createTransport({
             auth: {
                 pass: this.config.mail.password,
-                user: this.config.mail.user
+                user: this.config.mail.user,
             },
             host: this.config.mail.host,
             port: this.config.mail.port,
-            secure: true
+            secure: true,
         });
     }
     mailOptions(subject, text, html, to) {
@@ -22,15 +22,20 @@ class MailService extends Base_1.BaseService {
             html,
             subject,
             text,
-            to
+            to,
         };
     }
     sendEmail(mailOption) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
-            if (process.env.NODE_ENV === "production") {
-                this.transporter.sendMail(mailOption);
+            try {
+                if (process.env.NODE_ENV === "production") {
+                    this.transporter.sendMail(mailOption);
+                }
+                else {
+                    console.log(mailOption);
+                }
             }
-            else {
+            catch (error) {
                 console.log(mailOption);
             }
         });
