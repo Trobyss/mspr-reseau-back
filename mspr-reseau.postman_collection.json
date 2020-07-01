@@ -1,0 +1,154 @@
+{
+	"info": {
+		"_postman_id": "604e5937-9eb7-41b1-af90-f6d36ff194af",
+		"name": "mspr-reseau",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "First step login with user ad information",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"admin@lesgauloisepsi.onmicrosoft.com\",\n\t\"password\": \"Counter51\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/auth/ad_login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"auth",
+						"ad_login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Second step login with otp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"uid\": \"\",\n\t\"otp\": \"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/auth/loginOtp",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"auth",
+						"loginOtp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save current device of user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJlYzZjZmRkLWU0MGUtNDdiMy1hYTlmLTJmODU4NDBhZTkyZCIsInR5cGUiOiJBdXRoZW50aWNhdGlvbiIsImF1dGgiOnRydWUsImlhdCI6MTU5MjM4MzI0NCwiZXhwIjoxNTkyNDE5MjQ0fQ.uEopdhFn7L9Liv4bu_M8kLdWvCVInrqbs5N9LP-rNeQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/device/create",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"device",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List of devices of users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJlYzZjZmRkLWU0MGUtNDdiMy1hYTlmLTJmODU4NDBhZTkyZCIsInR5cGUiOiJBdXRoZW50aWNhdGlvbiIsImF1dGgiOnRydWUsImlhdCI6MTU5MjM4MzI0NCwiZXhwIjoxNTkyNDE5MjQ0fQ.uEopdhFn7L9Liv4bu_M8kLdWvCVInrqbs5N9LP-rNeQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/device/informations",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"device",
+						"informations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Compare two last navigator",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJlYzZjZmRkLWU0MGUtNDdiMy1hYTlmLTJmODU4NDBhZTkyZCIsInR5cGUiOiJBdXRoZW50aWNhdGlvbiIsImF1dGgiOnRydWUsImlhdCI6MTU5MjM4MzI0NCwiZXhwIjoxNTkyNDE5MjQ0fQ.uEopdhFn7L9Liv4bu_M8kLdWvCVInrqbs5N9LP-rNeQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/device/check",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"device",
+						"check"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
