@@ -68,10 +68,7 @@ export class ServerService extends BaseService {
         "bruteStore",
         {},
         (store: any) => {
-          this.bruteforce = new ExpressBrute(store, {
-            freeRetries: 15,
-            maxWait: 25,
-          });
+          this.bruteforce = new ExpressBrute(store);
           res();
         }
       );

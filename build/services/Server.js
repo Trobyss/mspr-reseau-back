@@ -46,10 +46,7 @@ class ServerService extends Base_1.BaseService {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
             return new Promise((res) => {
                 new express_brute_sequelize_1.default(this.context.database.client, "bruteStore", {}, (store) => {
-                    this.bruteforce = new express_brute_1.default(store, {
-                        freeRetries: 15,
-                        maxWait: 25,
-                    });
+                    this.bruteforce = new express_brute_1.default(store);
                     res();
                 });
             });
