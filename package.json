@@ -58,7 +58,7 @@
     "express-useragent": "^1.0.13",
     "faker": "^4.1.0",
     "fast-levenshtein": "^2.0.6",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "mariadb": "^2.3.1",
     "morgan": "^1.9.1",
     "ms-rest-azure": "^3.0.0",
